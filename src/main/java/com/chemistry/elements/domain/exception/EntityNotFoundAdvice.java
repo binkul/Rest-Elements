@@ -7,11 +7,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
 public class EntityNotFoundAdvice {
-
     @ExceptionHandler(EntityNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public String readerNotFoundHandler(EntityNotFoundException ex) {
         return ex.getMessage();
     }
-
 }

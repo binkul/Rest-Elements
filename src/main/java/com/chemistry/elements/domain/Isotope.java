@@ -29,6 +29,12 @@ public class Isotope {
     @JoinColumn(name = "element_id", nullable = false)
     private Element element;
 
+    public Isotope(Long id, int massNumber, String name) {
+        this.id = id;
+        this.massNumber = massNumber;
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "Isotope{" +

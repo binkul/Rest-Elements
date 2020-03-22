@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class ElementTest {
@@ -44,5 +46,19 @@ public class ElementTest {
         Assert.assertNotEquals(0, id);
         elementRepository.deleteById(id);
 
+    }
+
+    @Test
+    public void readElementTest() {
+        // Given
+        List<Element> elements = elementRepository.findAll();
+
+        // When
+        int count = elements.size();
+        System.out.println(elements.get(0));
+        System.out.println(elements.get(0).getIsotopes());
+
+        // Then
+        Assert.assertEquals(1, count);
     }
 }

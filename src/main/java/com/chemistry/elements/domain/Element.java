@@ -26,6 +26,9 @@ public class Element {
     private String name;
 
     @Column(nullable = false)
+    private String namePl;
+
+    @Column(nullable = false)
     private String symbol;
 
     @Column(nullable = false)
@@ -41,7 +44,7 @@ public class Element {
     @OneToMany(targetEntity = Isotope.class,
             mappedBy = "element",
             cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY)
+            fetch = FetchType.EAGER)
     private List<Isotope> isotopes = new ArrayList<>();
 
     @Override

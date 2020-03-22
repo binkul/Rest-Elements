@@ -15,6 +15,4 @@ public class IsotopeDto {
     private int massNumber;
     @JsonProperty("name")
     private String name;
-    @JsonProperty("element")
-    private Element element;
 }

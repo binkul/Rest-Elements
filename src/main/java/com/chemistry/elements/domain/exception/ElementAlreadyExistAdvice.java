@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class MissedArgumentAdvice {
-    @ExceptionHandler(MissedArgumentException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public String readerNotFoundHandler(MissedArgumentException ex) {
+public class ElementAlreadyExistAdvice {
+    @ExceptionHandler(ElementAlreadyExistException.class)
+    @ResponseStatus(HttpStatus.FOUND)
+    public String readerNotFoundHandler(ElementAlreadyExistException ex) {
         return ex.getMessage();
     }
 }

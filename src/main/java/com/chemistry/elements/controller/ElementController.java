@@ -16,7 +16,7 @@ public class ElementController {
     ElementService service;
 
     @GetMapping("/all")
-    List<ElementDto> getElements() {
+    List<ElementDto> getElements() { //List<ElementDto> getElements() {
         return service.getElements();
     }
 
