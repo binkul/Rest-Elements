@@ -1,6 +1,7 @@
 package com.chemistry.elements.controller;
 
 import com.chemistry.elements.domain.ElementDto;
+import com.chemistry.elements.domain.FormulaDto;
 import com.chemistry.elements.service.ElementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -16,8 +17,13 @@ public class ElementController {
     ElementService service;
 
     @GetMapping("/all")
-    List<ElementDto> getElements() { //List<ElementDto> getElements() {
+    List<ElementDto> getElements() {
         return service.getElements();
+    }
+
+    @GetMapping("/{formula}")
+    List<FormulaDto> getFormula(@PathVariable String formula) {
+        return service.getFormula(formula);
     }
 
     @PostMapping(value = "add", consumes = MediaType.APPLICATION_JSON_VALUE)
