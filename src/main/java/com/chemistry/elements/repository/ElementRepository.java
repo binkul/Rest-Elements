@@ -24,5 +24,7 @@ public interface ElementRepository extends CrudRepository<Element, Long> {
 
     Optional<Element> findByName(String name);
 
+    Optional<Element> findBySymbol(String symbol);
+
     boolean existsElementByNameOrSymbol(String name, String symbol);
 }

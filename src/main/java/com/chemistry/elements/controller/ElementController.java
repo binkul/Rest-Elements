@@ -21,7 +21,12 @@ public class ElementController {
         return service.getElements();
     }
 
-    @GetMapping("/{formula}")
+    @GetMapping("/{symbol}")
+    ElementDto getElement(@PathVariable String symbol) {
+        return service.getElement(symbol);
+    }
+
+    @GetMapping("/mass/{formula}")
     List<FormulaDto> getFormula(@PathVariable String formula) {
         return service.getFormula(formula);
     }
