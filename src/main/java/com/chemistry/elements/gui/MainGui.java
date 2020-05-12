@@ -1,15 +1,13 @@
-package com.chemistry.elements.vaadin;
+package com.chemistry.elements.gui;
 
-import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 
 @Route
-@StyleSheet("context://style.css")
+@StyleSheet("frontend://styles/style.css")
 public class MainGui extends HorizontalLayout {
 
     private TextField textFieldHeight;
